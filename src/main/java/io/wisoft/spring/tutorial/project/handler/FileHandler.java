@@ -12,6 +12,14 @@ public class FileHandler {
 
     private static final String DEFAULT_FILE_PATH = System.getProperty("user.dir") + "/profile/";
 
+    static {
+        final File defaultFileSavedDirectory = new File(DEFAULT_FILE_PATH);
+
+        if (!defaultFileSavedDirectory.exists()) {
+            defaultFileSavedDirectory.mkdirs();
+        }
+    }
+
     public static String saveFileData(final MultipartFile fileData) {
         if (fileData.isEmpty()) {
             throw new IllegalArgumentException("프로필 이미지를 전송해야 합니다.");
