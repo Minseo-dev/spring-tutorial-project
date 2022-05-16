@@ -11,6 +11,7 @@ import io.wisoft.spring.tutorial.project.handler.FileHandler;
 import io.wisoft.spring.tutorial.project.handler.exception.AccountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AuthService {
@@ -22,6 +23,7 @@ public class AuthService {
         this.accountRepository = accountRepository;
     }
 
+    @Transactional
     public SignUpResponse signup(final SignUpRequest request) {
 
         final String profileImagePath = FileHandler.saveFileData(request.getProfileImage());
@@ -40,6 +42,7 @@ public class AuthService {
         return new SignUpResponse(account.getId());
     }
 
+    @Transactional(readOnly = true)
     public SignInResponse signin(final SignInRequest request) {
         final Account account = accountRepository.findByEmail(request.getEmail())
                 .orElseThrow(
