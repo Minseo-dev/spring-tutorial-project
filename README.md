@@ -17,5 +17,10 @@
 $ ./gradlew build
 ```
 
+## Run
+```bash
+$ java -jar build/libs/spring-tutorial-project-0.0.1-SNAPSHOT.jar
+```
+
 ### Guideline
 - [Notion Page](https://migni-dev-space.notion.site/Back-end-Tutorial-ecb441ba54b74c619645ec69e96a6e07)
