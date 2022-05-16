@@ -34,4 +34,9 @@ public class Account {
         this.profileImagePath = profileImagePath;
     }
 
+    public void checkPassword(final String password) {
+        if (!this.password.equals(password)) {
+            throw new IllegalArgumentException("패스워드가 일치하지 않습니다.");
+        }
+    }
 }
