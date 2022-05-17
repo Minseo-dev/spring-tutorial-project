@@ -1,7 +1,5 @@
 package io.wisoft.spring.tutorial.project.account.web.dto.res;
 
-import io.wisoft.spring.tutorial.project.account.Account;
-import io.wisoft.spring.tutorial.project.handler.FileHandler;
 import lombok.Getter;
 import lombok.Setter;
 
