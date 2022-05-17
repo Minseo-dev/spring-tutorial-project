@@ -13,11 +13,14 @@ public class FindAccountResponse {
     private String email;
     private String profileImageName;
 
-    public FindAccountResponse(final Account account) {
-        this.name = account.getName();
-        this.email = account.getEmail();
-        this.profileImageName = FileHandler
-                .getFileName(account.getProfileImagePath());
+    public FindAccountResponse(
+            final String name,
+            final String email,
+            final String profileImageName
+    ) {
+        this.name = name;
+        this.email = email;
+        this.profileImageName = profileImageName;
     }
 
 }
