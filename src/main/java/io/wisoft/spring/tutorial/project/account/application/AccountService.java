@@ -6,6 +6,7 @@ import io.wisoft.spring.tutorial.project.account.web.dto.FindAccountResponse;
 import io.wisoft.spring.tutorial.project.handler.exception.AccountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AccountService {
@@ -17,6 +18,7 @@ public class AccountService {
         this.accountRepository = accountRepository;
     }
 
+    @Transactional(readOnly = true)
     public FindAccountResponse findAccountById(final Long accountId) {
         final Account account = accountRepository.findById(accountId)
                 .orElseThrow(
