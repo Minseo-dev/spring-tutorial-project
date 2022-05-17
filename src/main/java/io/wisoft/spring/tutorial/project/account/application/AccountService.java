@@ -2,7 +2,7 @@ package io.wisoft.spring.tutorial.project.account.application;
 
 import io.wisoft.spring.tutorial.project.account.Account;
 import io.wisoft.spring.tutorial.project.account.persistence.AccountRepository;
-import io.wisoft.spring.tutorial.project.account.web.dto.FindAccountResponse;
+import io.wisoft.spring.tutorial.project.account.web.dto.res.FindAccountResponse;
 import io.wisoft.spring.tutorial.project.handler.exception.AccountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
