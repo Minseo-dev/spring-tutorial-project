@@ -3,6 +3,7 @@ package io.wisoft.spring.tutorial.project.account.application;
 import io.wisoft.spring.tutorial.project.account.Account;
 import io.wisoft.spring.tutorial.project.account.persistence.AccountRepository;
 import io.wisoft.spring.tutorial.project.account.web.dto.res.FindAccountResponse;
+import io.wisoft.spring.tutorial.project.handler.FileHandler;
 import io.wisoft.spring.tutorial.project.handler.exception.AccountNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,13 @@ public class AccountService {
                 )
                 .toDomain();
 
-        return new FindAccountResponse(account);
+        return new FindAccountResponse(
+                account.getName(),
+                account.getEmail(),
+                FileHandler.getFileName(
+                        account.getProfileImagePath()
+                )
+        );
     }
 
 }
