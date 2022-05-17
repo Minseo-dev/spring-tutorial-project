@@ -1,4 +1,4 @@
-package io.wisoft.spring.tutorial.project.account.web.dto;
+package io.wisoft.spring.tutorial.project.account.web;
 
 import io.wisoft.spring.tutorial.project.account.application.AuthService;
 import io.wisoft.spring.tutorial.project.account.web.dto.req.SignInRequest;
