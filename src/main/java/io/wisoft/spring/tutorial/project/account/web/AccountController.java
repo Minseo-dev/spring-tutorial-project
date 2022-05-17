@@ -1,7 +1,7 @@
 package io.wisoft.spring.tutorial.project.account.web;
 
 import io.wisoft.spring.tutorial.project.account.application.AccountService;
-import io.wisoft.spring.tutorial.project.account.web.dto.FindAccountResponse;
+import io.wisoft.spring.tutorial.project.account.web.dto.res.FindAccountResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
