@@ -2,7 +2,6 @@ package io.wisoft.spring.tutorial.project.handler;
 
 import io.wisoft.spring.tutorial.project.handler.exception.AccountNotFoundException;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -69,7 +68,6 @@ public class GlobalExceptionHandler {
 }
 
 @Getter
-@Setter
 class ErrorResponse {
     final List<String> messages;
 

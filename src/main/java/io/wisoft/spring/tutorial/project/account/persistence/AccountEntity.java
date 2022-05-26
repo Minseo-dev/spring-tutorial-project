@@ -1,11 +1,9 @@
 package io.wisoft.spring.tutorial.project.account.persistence;
 
 import io.wisoft.spring.tutorial.project.account.Account;
-import lombok.Getter;
 
 import javax.persistence.*;
 
-@Getter
 @Entity
 @Table(name = "ACCOUNT")
 public class AccountEntity {
