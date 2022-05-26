@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @RestController
 public class ProfileImageController {
 
-    @GetMapping("/{profile-image}")
+    @GetMapping("/api/{profile-image}")
     public ResponseEntity<byte[]> profileImage(
             @PathVariable("profile-image")
             @Valid final String profileImageName) {

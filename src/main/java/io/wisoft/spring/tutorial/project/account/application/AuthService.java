@@ -23,35 +23,4 @@ public class AuthService {
         this.accountRepository = accountRepository;
     }
 
-    @Transactional
-    public SignUpResponse signup(final SignUpRequest request) {
-
-        final String profileImagePath = FileHandler.saveFileData(request.getProfileImage());
-
-        Account account = new Account(
-                request.getName(),
-                request.getEmail(),
-                request.getPassword(),
-                profileImagePath
-        );
-
-        account = accountRepository
-                .save(AccountEntity.from(account))
-                .toDomain();
-
-        return new SignUpResponse(account.getId());
-    }
-
-    @Transactional(readOnly = true)
-    public SignInResponse signin(final SignInRequest request) {
-        final Account account = accountRepository.findByEmail(request.getEmail())
-                .orElseThrow(
-                        () -> new AccountNotFoundException(request.getEmail() + "에 해당하는 사용자를 찾을 수 없습니다.")
-                )
-                .toDomain();
-
-        account.checkPassword(request.getPassword());
-
-        return new SignInResponse(account.getId());
-    }
 }

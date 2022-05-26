@@ -19,21 +19,4 @@ public class AccountService {
         this.accountRepository = accountRepository;
     }
 
-    @Transactional(readOnly = true)
-    public FindAccountResponse findAccountById(final Long accountId) {
-        final Account account = accountRepository.findById(accountId)
-                .orElseThrow(
-                        () -> new AccountNotFoundException(accountId + "에 해당하는 사용자가 없습니다.")
-                )
-                .toDomain();
-
-        return new FindAccountResponse(
-                account.getName(),
-                account.getEmail(),
-                FileHandler.getFileName(
-                        account.getProfileImagePath()
-                )
-        );
-    }
-
 }
